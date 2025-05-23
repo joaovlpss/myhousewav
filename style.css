@@ -109,7 +109,7 @@ body {
         grid-template-columns: 1fr;
         
         /* garante que a coluna única não cole nas bordas da tela */
-        max-width: 85%;
+        max-width: 200px;
     }
 
     .logo h1 {
