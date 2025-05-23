@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizador</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .content-container { max-width: 800px; width: 100%; }
+        .content { line-height: 1.7; }
+        .content img { max-width: 100%; height: auto; border-radius: 5px; }
+        .content h1, .content h2 { font-family: 'Lora', serif; }
+        .back-link { display: block; margin-bottom: 40px; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div class="content-container">
+        <a href="#" id="back-link" class="back-link">&larr; Voltar</a>
+
+        <div id="content" class="content">Carregando...</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <script>
+        // pega os parâmetros da URL (ex: ?type=post&file=post1)
+        const params = new URLSearchParams(window.location.search);
+        const type = params.get('type'); // 'post' ou 'project'
+        const file = params.get('file'); // 'post1' ou 'projeto1'
+
+        if (type && file) {
+            // define o caminho correto para o arquivo .md
+            const folder = type === 'post' ? 'posts' : 'project_details';
+            const filePath = `${folder}/${file}.md`;
+
+            // define o link de "voltar"
+            const backLink = document.getElementById('back-link');
+            backLink.href = type === 'post' ? 'blog.html' : 'projetos.html';
+
+            // busca o arquivo markdown
+            fetch(filePath)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Arquivo não encontrado');
+                    }
+                    return response.text();
+                })
+                .then(text => {
+                    // converte markdown para HTML e insere na página
+                    document.getElementById('content').innerHTML = marked.parse(text);
+                    // atualiza o título da página
+                    const firstH1 = document.querySelector('#content h1');
+                    if (firstH1) {
+                        document.title = firstH1.textContent;
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('content').innerHTML = `<h2>Erro ao carregar o conteúdo.</h2><p>Verifique se o arquivo ${filePath} existe.</p>`;
+                    console.error(error);
+                });
+        } else {
+            document.getElementById('content').innerHTML = '<h2>Conteúdo não especificado.</h2>';
+        }
+    </script>
+</body>
+</html>
