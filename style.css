@@ -58,7 +58,7 @@ body {
 }
 
 .card:hover {
-    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+    transform: scale(1.05); /* efeito de zoom ao passar o mouse */
 }
 
 .card h2 {
@@ -66,13 +66,13 @@ body {
     text-align: center;
 }
 
-/* Cores específicas para cada card */
+/* cores específicas para cada card */
 .card-cv { background-color: var(--red); }
 .card-blog { background-color: var(--green); }
 .card-projetos { background-color: var(--blue); }
 /* .card-gallery { background-color: var(--purple); } */
 
-/* Rodapé com informações */
+/* rodapé com informações */
 .about-me {
     text-align: center;
     margin-top: 40px;
