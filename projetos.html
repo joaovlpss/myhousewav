@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .list-container { max-width: 800px; width: 100%; }
+        .list-item {
+            background-color: #ece2c8; /* Um tom de creme mais escuro */
+            border-left: 5px solid var(--blue);
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .list-item-title a {
+            font-family: 'Lora', serif;
+            font-size: 1.8em;
+            color: var(--text);
+            text-decoration: none;
+        }
+        .list-item-title a:hover { text-decoration: underline; }
+        .github-button {
+            background-color: var(--dark-gray);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+        .github-button:hover { background-color: #000; }
+        .page-title { font-family: 'Lora', serif; font-size: 3em; margin-bottom: 40px; }
+        .back-link { display: block; margin-bottom: 40px; font-weight: 600; }
+        .page-description {
+            font-family: 'Lora', serif; 
+            font-size: 1.1em;           
+            line-height: 1.7;           
+            text-align: justify;        
+            max-width: 800px;           
+            margin-bottom: 40px;       
+            color: var(--text);
+        }
+    </style>
+</head>
+<body>
+    <div class="list-container">
+        <a href="index.html" class="back-link">&larr; Voltar para o Início</a>
+        <h1 class="page-title">Projetos</h1>
+
+    <p class="page-description">
+        Clique no título para ler uma descrição sobre o processo e os resultados, ou clique no botão do GitHub para o código-fonte.
+    </p>
+
+        <div class="list-item">
+            <div class="list-item-title">
+                <a href="viewer.html?type=project&file=projeto1">Análise de Dados em Licitações Públicas</a>
+            </div>
+            <a href="https://github.com/joaovlpss/graph-modelling-pb" target="_blank" class="github-button">
+                GitHub
+            </a>
+        </div>
+
+        <div class="list-item">
+            <div class="list-item-title">
+                <a href="viewer.html?type=project&file=projeto1">Tgraph: Uma ferramenta para análise de grafos</a>
+            </div>
+            <a href="https://github.com/joaovlpss/tgraph-fork" target="_blank" class="github-button">
+                GitHub
+            </a>
+        </div>
+
+        </div>
+</body>
+</html>

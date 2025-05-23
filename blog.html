@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .list-container { max-width: 800px; width: 100%; }
+        .list-item {
+            background-color: #ece2c8;
+            /* Cor da borda diferente para o blog */
+            border-left: 5px solid var(--green);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .list-item-title a {
+            font-family: 'Lora', serif;
+            font-size: 1.8em;
+            color: var(--text);
+            text-decoration: none;
+        }
+        .list-item-title a:hover { text-decoration: underline; }
+        .list-item-subtitle {
+            font-size: 1.1em;
+            color: var(--light-gray);
+            margin-top: 5px;
+            font-style: italic;
+        }
+        .page-title { font-family: 'Lora', serif; font-size: 3em; margin-bottom: 40px; }
+        .back-link { display: block; margin-bottom: 40px; font-weight: 600; }
+        .page-description {
+            font-family: 'Lora', serif; 
+            font-size: 1.1em;           
+            line-height: 1.7;           
+            text-align: justify;        
+            max-width: 800px;           
+            margin-bottom: 40px;       
+            color: var(--text);
+        }
+    </style>
+</head>
+<body>
+    <div class="list-container">
+        <a href="index.html" class="back-link">&larr; Voltar para o Início</a>
+        <h1 class="page-title">Blog</h1>
+
+    <p class="page-description">
+        Alguns pensamentos avulsos ou posts técnicos com situações que passo no dia a dia da profissão.
+    </p>
+
+        <div class="list-item">
+            <div class="list-item-title">
+                <a href="viewer.html?type=post&file=post1">Teste inicial de blog post</a>
+            </div>
+            <p class="list-item-subtitle">Temos sempre que começar de algum lugar.</p>
+        </div>
+        
+    </div>
+</body>
+</html>

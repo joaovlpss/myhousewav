@@ -1,0 +1,90 @@
+/* paleta meio gruvbox */
+:root {
+    --background: #faefe0;
+    --text: #3c3836;
+    --red: #c44848;
+    --green: #6e7f5b;
+    --blue: #45628a;
+    --purple: #794f5e;
+    --orange: #d65d0e;
+    --dark-gray: #3c3836;
+    --light-gray: #a89984;
+}
+
+/* estilo geral */
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: 'Didot', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+/* logo/titulo */
+.logo h1 {
+    font-family: 'Lora', serif;
+    font-size: 2.5em;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+/* container do grid */
+.grid-container {
+    display: grid;
+    /* 3 colunas de tamanho igual.*/
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px;
+    width: 100%;
+    max-width: 800px;
+}
+
+/* estilo dos quadrados (cards) */
+.card {
+    aspect-ratio: 1 / 1; /* sempre um quadrado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5em;
+    font-weight: 600;
+    border-radius: 15px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+}
+
+.card h2 {
+    margin: 0;
+    text-align: center;
+}
+
+/* Cores específicas para cada card */
+.card-cv { background-color: var(--red); }
+.card-blog { background-color: var(--green); }
+.card-projetos { background-color: var(--blue); }
+/* .card-gallery { background-color: var(--purple); } */
+
+/* Rodapé com informações */
+.about-me {
+    text-align: center;
+    margin-top: 40px;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+.about-me a {
+    color: var(--blue);
+    font-weight: 600;
+    text-decoration: none;
+}
+.about-me a:hover {
+    text-decoration: underline;
+}
