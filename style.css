@@ -100,3 +100,27 @@ body {
     border-radius: 8px;               
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
+
+/* estilos para celular */
+@media (max-width: 600px) {
+
+    .grid-container {
+        /* muda o grid para ter apenas uma coluna */
+        grid-template-columns: 1fr;
+        
+        /* garante que a coluna única não cole nas bordas da tela */
+        max-width: 85%;
+    }
+
+    .logo h1 {
+        /* diminui um pouco o tamanho do logo em telas pequenas para ficar mais proporcional */
+        font-size: 2.2em;
+        margin-bottom: 30px;
+    }
+
+    .about-me {
+        /* ajusta o espaçamento do rodapé em telas menores */
+        margin-top: 30px;
+    }
+
+}
